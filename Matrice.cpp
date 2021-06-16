@@ -1,7 +1,7 @@
 #include "Matrice.hpp"
 
 
-void Matrice::openingMap()
+void Matrice::openingMap(Entity**)
 {
     std::ifstream file("Map.txt");
     std::string str; 

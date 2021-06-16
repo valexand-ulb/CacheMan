@@ -17,7 +17,7 @@ int** map;
 public:
     Matrice() noexcept = default;
     void openingMap(Entity**);
-    void diplay();
+    void display();
 
 
 
