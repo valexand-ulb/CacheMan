@@ -1,3 +1,6 @@
+#ifndef ENTITY_HPP
+#define ENTITY_HPP
+
 class Entity
 {
 private:
@@ -15,3 +18,4 @@ public:
     void set_speed(double new_speed);
     void set_sprite(int new_sprite);
 };
+#endif

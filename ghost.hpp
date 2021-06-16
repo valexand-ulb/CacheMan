@@ -1,3 +1,6 @@
+#ifndef GHOST_HPP
+#define GHOST_HPP
+
 #include "entity.hpp"
 
 class Ghost : public Entity
@@ -10,3 +13,5 @@ public:
     // Destructeur
     virtual ~Ghost(){};
 };
+
+#endif

@@ -1,3 +1,7 @@
+#ifndef BONUS_HPP
+#define BONUS_HPP
+
+
 #include "entity.hpp"
 
 class Bonus : public Entity
@@ -26,3 +30,5 @@ public:
     void set_wall_breaker(int wall_breaker);
     void set_freeze_opponent(bool freeze_opponent);
 };
+
+#endif

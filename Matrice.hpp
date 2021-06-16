@@ -1,10 +1,13 @@
+#ifndef MATRICE_HPP
+#define MATRICE_HPP
+
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <string.h>
 #include <stdio.h> 
 #include <stdlib.h>
-
+#include "entity.hpp"
 
 class Matrice{
 
@@ -13,10 +16,12 @@ int** map;
 
 public:
     Matrice() noexcept = default;
-    void openingMap();
+    void openingMap(Entity**);
     void diplay();
 
 
 
     
 };
+
+#endif
