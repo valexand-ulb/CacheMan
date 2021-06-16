@@ -22,3 +22,14 @@ void Matrice::openingMap()
     }
     return;
 }
+
+
+void Matrice::display(){
+    for (int i = 0; i < size ; i++){
+        for (int j = 0 ; j < size ;j++){
+            if (map[i][j] == 1){std::cout << "X";}
+            else if (map[i][j] == 1){std::cout << ".";}
+        }
+        std::cout << std::endl;
+    }
+}

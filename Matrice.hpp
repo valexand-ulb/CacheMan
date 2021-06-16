@@ -12,9 +12,9 @@ int size;
 int** map;
 
 public:
-
+    Matrice() noexcept = default;
     void openingMap();
-
+    void diplay();
 
 
 
