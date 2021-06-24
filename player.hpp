@@ -1,9 +1,9 @@
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 
-#include "entity.hpp"
+#include "Person.hpp"
 
-class Player : public Entity
+class Player : public Person
 {
 private:
 

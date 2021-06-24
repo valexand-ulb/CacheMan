@@ -12,11 +12,11 @@ class Game{
     Entity(* entity)[sizeMax]; 
 
     //entity
-    Player* player;
-    Ghost* ghost1;
-    Ghost* ghost2;
-    Ghost* ghost3;
-    Ghost* ghost4;
+    Entity* player;
+    Entity* IA1;
+    Entity* IA2;
+    Entity* IA3;
+    Entity* IA4;
 
 
 public:

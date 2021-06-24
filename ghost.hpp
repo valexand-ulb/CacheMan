@@ -1,9 +1,9 @@
 #ifndef GHOST_HPP
 #define GHOST_HPP
 
-#include "entity.hpp"
+#include "Person.hpp"
 
-class Ghost : public Entity
+class Ghost : public Person
 {
 private:
     
