@@ -1,6 +1,6 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
-
+#include "position.hpp"
 
 #define UP 1
 #define DOWN 2
@@ -9,15 +9,18 @@
 
 class Entity
 {
-private:
+protected:
+    //attribut de deplacement
+    Position* _pos;
     int _direction = 0;
     double _speed;
+    //Display
     int _sprite;
 public:
     // Constructeur
-    Entity(double speed, int sprite): _speed(speed), _sprite(sprite) {}
+    Entity(double speed, int x, int y ,int sprite): _speed(speed), _sprite(sprite) {_pos = new Position(x,y);}
     // Destructeur
-    ~Entity(){};
+    ~Entity(){delete _pos;};
     // Getter
     double get_speed() const;
     int get_sprite() const;

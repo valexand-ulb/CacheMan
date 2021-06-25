@@ -8,10 +8,14 @@
 
 class Position {
 private:
-    int x,y;
+    int _x,_y;
 public:
     Position(int x, int y);
+    //getter
     int getX() const, getY() const;
+    //setter
+    void setX(int x); void setY(int y);
+    void setPosition(int, int);
     int distFromPos(Position pos) const;
 };
 
