@@ -17,6 +17,7 @@ void Person::move(int direction){
     }
 }
 
-bool isMove(int x, int y){
+bool Person::isMove(int x, int y){
     // a faire !
+    return true;
 }

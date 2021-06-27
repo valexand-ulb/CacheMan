@@ -16,7 +16,7 @@ public:
     // Constructeur
     Bonus(double speed, int sprite, int speed_up, bool invisibility, bool dash, int wall_breaker, bool freeze_opponent);
     // Destructeur
-    virtual ~Bonus(){};
+    virtual ~Bonus(){}
     // Getter
     int get_speed_up() const;
     bool get_invisibility() const;
@@ -29,6 +29,8 @@ public:
     void set_dash(bool dash);
     void set_wall_breaker(int wall_breaker);
     void set_freeze_opponent(bool freeze_opponent);
+    //move a mettre ?
+    void move(int direction) override{}
 };
 
 #endif

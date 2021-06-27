@@ -20,7 +20,7 @@ public:
     // Constructeur
     Entity(double speed, int x, int y ,int sprite): _speed(speed), _sprite(sprite) {_pos = new Position(x,y);}
     // Destructeur
-    ~Entity(){delete _pos;};
+    virtual ~Entity(){delete _pos;}
     // Getter
     double get_speed() const;
     int get_sprite() const;

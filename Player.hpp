@@ -9,7 +9,10 @@ private:
 
 public:
     // Constructeur
-    Player(double speed, int sprite);
+    Player(double speed, int sprite):Person(speed
+    ,0,0,sprite){}
+    Player(double speed,int x, int y, int sprite):Person(speed
+    ,x,y,sprite){}
     // Destructeur
     virtual ~Player(){};
 };
