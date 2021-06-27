@@ -1,7 +1,7 @@
 #ifndef PERSON_HPP
 #define PERSON_HPP
 
-#include "entity.hpp"
+#include "Entity.hpp"
 
 class Person : public Entity{
 

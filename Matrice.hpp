@@ -7,18 +7,22 @@
 #include <string.h>
 #include <stdio.h> 
 #include <stdlib.h>
-#include "entity.hpp"
+#include "Entity.hpp"
+#include "Game.hpp"
 
 class Matrice{
 
-int size;
-int** map;
+int _size;
+int** _map;
+std::string _file_map;
+std::string spawn_person;
 
 public:
     Matrice() noexcept = default;
-    void openingMap(Entity**);
+    Matrice(std::string way_map): _file_map(way_map) {}
+    void openingMap();
     void display();
-
+    std::string get_spawn_person();
 
 
     

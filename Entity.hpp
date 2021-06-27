@@ -30,6 +30,6 @@ public:
     void set_sprite(int new_sprite);
     void set_direction(int new_direction);
     //move. A redefinir en dessous!
-    virtual void move(int direction);
+    virtual void move(int direction) {return;}
 };
 #endif

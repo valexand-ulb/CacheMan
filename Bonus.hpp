@@ -30,7 +30,7 @@ public:
     void set_wall_breaker(int wall_breaker);
     void set_freeze_opponent(bool freeze_opponent);
     //move a mettre ?
-    void move(int direction) override{}
+    //void move(int direction) override{}
 };
 
 #endif

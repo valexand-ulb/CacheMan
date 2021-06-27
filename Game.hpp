@@ -2,6 +2,8 @@
 #define GAME_HPP
 #include "Player.hpp"
 #include "Ghost.hpp"
+#include "Matrice.hpp"
+#include <string>
 
 class Game{
 /*
@@ -12,12 +14,9 @@ class Game{
     Entity(* entity)[sizeMax]; 
 
     //entity
-    Entity* player;
-    Entity* IA1;
-    Entity* IA2;
-    Entity* IA3;
-    Entity* IA4;
-
+    Entity* player1;
+    Entity* ghost1;
+    Matrice* map;
 
 public:
     //constructeur
