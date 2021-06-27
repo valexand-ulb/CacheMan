@@ -2,7 +2,7 @@
 // Created by Vinovrski Alexandre on 16/06/2021.
 //
 
-#include "position.hpp"
+#include "Position.hpp"
 #include <cmath>
 
 Position::Position(int x, int y):_x(x),_y(y)
