@@ -1,6 +1,6 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
-#include "position.hpp"
+#include "Position.hpp"
 
 #define UP 1
 #define DOWN 2
