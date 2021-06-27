@@ -1,4 +1,4 @@
-#include "bonus.hpp"
+#include "Bonus.hpp"
 
 // Constructeur
 Bonus::Bonus(double speed, int sprite, int speed_up, bool invisibility, bool dash, int wall_breaker, bool freeze_opponent): Entity(speed,0,0, sprite), _speed_up(speed_up), _invisibility(invisibility), _dash(dash), _wall_breaker(wall_breaker), _freeze_opponent(freeze_opponent){}
