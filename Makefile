@@ -1,7 +1,7 @@
 COMPIL = -c
 
-output: bonus.o DisplayMenu.o entity.o Game.o Ghost.o Matrice.o Person.o Player.o position.o
-	g++ main.cpp bonus.o DisplayMenu.o entity.o Game.o Ghost.o Matrice.o Person.o Player.o position.o -o output #$(COMPIL)
+output: Bonus.o DisplayMenu.o Entity.o Game.o Ghost.o Matrice.o Person.o Player.o Position.o
+	g++ main.cpp Bonus.o DisplayMenu.o Entity.o Game.o Ghost.o Matrice.o Person.o Player.o Position.o -o output #$(COMPIL)
 
 
 *.o: *.cpp *.hpp
