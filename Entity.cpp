@@ -1,4 +1,4 @@
-#include "entity.hpp"
+#include "Entity.hpp"
 
 //Getter
 double Entity::get_speed() const {return _speed;}
