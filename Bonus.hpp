@@ -2,7 +2,7 @@
 #define BONUS_HPP
 
 
-#include "entity.hpp"
+#include "Entity.hpp"
 
 class Bonus : public Entity
 {
