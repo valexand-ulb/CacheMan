@@ -23,6 +23,9 @@ public:
     Game() noexcept = default;
 
     //fonction
+    void print(){
+        map->display();
+    }
     void initGame(); //creation des entites de bases
     void mainBoucle();
 

@@ -33,7 +33,7 @@ void Matrice::display(){
     for (int i = 0; i < _size ; i++){
         for (int j = 0 ; j < _size ;j++){
             if (_map[i][j] == 1){std::cout << "X";}
-            else if (_map[i][j] == 1){std::cout << ".";}
+            else if (_map[i][j] == 0){std::cout << ".";}
         }
         std::cout << std::endl;
     }
