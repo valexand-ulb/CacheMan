@@ -10,4 +10,5 @@ output: Bonus.o DisplayMenu.o Entity.o Game.o Ghost.o Matrice.o Person.o Player.
 clean: 
 	rm *.o *.hpp.gch output
 
-re: clean output
+re: 
+	clean make

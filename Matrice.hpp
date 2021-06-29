@@ -7,22 +7,27 @@
 #include <string.h>
 #include <stdio.h> 
 #include <stdlib.h>
+#include <vector>
+
 #include "Entity.hpp"
-#include "Game.hpp"
+//#include "Game.hpp"
 
 class Matrice{
 
 int _size;
 int** _map;
 std::string _file_map;
-std::string spawn_person;
+std::vector<std::string> vect_spawn_person;
 
 public:
     Matrice() noexcept = default;
     Matrice(std::string way_map): _file_map(way_map) {}
     void openingMap();
     void display();
-    std::string get_spawn_person();
+    void spliter(std::vector<std::string>& vect, std::string str);
+    std::string get_spawn_person(){
+        return vect_spawn_person[rand() % vect_spawn_person.size()];
+    }
 
 
     

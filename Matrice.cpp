@@ -4,11 +4,16 @@
 void Matrice::openingMap()
 {
     std::ifstream file(_file_map);
+    //recupere la taille de la map
     std::string str; 
     std::getline(file, str);
     const int nb = std::stoi(str);
+    //recupere les endroits de spawn !
+    std::string spawn_person;
+    std::getline(file, spawn_person);
+    spliter(vect_spawn_person, spawn_person);
     _size = nb;
-    int x = 0;
+    //int x = 0;
     _map = new int* [nb];
     for (int i=0; i < nb; i++)
         _map[i] = new int[nb];
@@ -34,6 +39,22 @@ void Matrice::display(){
     }
 }
 
-std::string Matrice::get_spawn_person() {
+void Matrice::spliter(std::vector<std::string>& vect, std::string str){
 
+	std::string::size_type stTemp = str.find(",");
+	
+	while(stTemp != std::string::npos)
+	{
+		vect.push_back(str.substr(0, stTemp));
+		str = str.substr(stTemp + 1);
+		stTemp = str.find(",");
+	}
+	
+	vect.push_back(str);
+
+	return;
+}
+
+std::string Matrice::get_spawn_person(){
+    return vect_spawn_person[rand() % vect_spawn_person.size()];
 }
