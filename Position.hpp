@@ -4,19 +4,17 @@
 
 #ifndef POSTION_POSITION_HPP
 #define POSTION_POSITION_HPP
-
 #include <tuple>
 
 class Position {
 private:
-    int x,y;    // position
-    std::tuple<int,int> vectors[4] = {{0,-1},{0,1},{-1,0},{1,0}};
-
+    int x,y;
+    const std::tuple[4] <signed int,signed int> deplacement = {std::make_tuple(0,1),std::make_tuple(0,-1),
+                                                               std::make_tuple(1,0),std::make_tuple(-1,0)};
 public:
     Position(int x, int y);
     int getX() const, getY() const;
     int distFromPos(Position pos) const;
-
 };
 
 

@@ -2,17 +2,28 @@
 // Created by Vinovrski Alexandre on 16/06/2021.
 //
 
-#include "position.hpp"
+#include "Position.hpp"
 #include <cmath>
 
-Position::Position(int x, int y):x(x), y(y)
+Position::Position(int x, int y):_x(x),_y(y)
 {}
 
 int Position::getX() const {
-    return this->x;
+    return this->_x;
 }
+void Position::setX(int x){
+    this->_x = x;
+}
+
 int Position::getY() const {
-    return this->y;
+    return this->_y;
+}
+void Position::setY(int y){
+    this->_y = y;
+}
+
+void Position::setPosition(int x, int y){
+    setX(x);setY(y);
 }
 
 int Position::distFromPos(Position pos) const {
