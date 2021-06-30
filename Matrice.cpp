@@ -56,5 +56,8 @@ void Matrice::spliter(std::vector<std::string>& vect, std::string str){
 }
 
 std::string Matrice::get_spawn_person(){
-    return vect_spawn_person[rand() % vect_spawn_person.size()];
+    int indice = rand() % vect_spawn_person.size() - 2;
+    vect_spawn_person.push_back(vect_spawn_person[indice]);
+    vect_spawn_person.erase(vect_spawn_person.begin()+indice);
+    return vect_spawn_person.back();
 }
