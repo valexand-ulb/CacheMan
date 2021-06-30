@@ -12,9 +12,10 @@ private:
     bool _dash = false; // peut dash à travers un mur
     int _wall_breaker = 0; // peut casser un certain nombre de mur
     bool _freeze_opponent = false;  // peut freeze l'adversaire
+    bool _blok = false;
 public:
     // Constructeur
-    Bonus(double speed, int sprite, int speed_up, bool invisibility, bool dash, int wall_breaker, bool freeze_opponent);
+    Bonus(double speed, int sprite, int speed_up, bool invisibility, bool dash, int wall_breaker, bool freeze_opponent, bool blok);
     // Destructeur
     virtual ~Bonus(){}
     // Getter

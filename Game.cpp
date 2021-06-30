@@ -1,5 +1,5 @@
 #include "Game.hpp"
-
+#include <sstream>
 
 void Game::initGame(){
 
@@ -20,18 +20,18 @@ void Game::initGame(){
 
     player1 = new Player(50, x, y,0);
 
-    std::string posi = map->get_spawn_person();
+    posi = map->get_spawn_person();
     strValue << posi[0];
 
-    unsigned int x;
     strValue >> x;
 
     strValue << posi[2];
 
-    unsigned int y;
     strValue >> y;
     ghost1 = new Ghost(50,x,y,1);
     mainBoucle();
+    delete player1;
+    delete ghost1;
     return;
 }
 

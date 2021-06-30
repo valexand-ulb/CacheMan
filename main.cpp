@@ -5,8 +5,8 @@
 #include "Game.hpp"
 
  int main(){
-    Game jeu;
-    jeu.initGame();
-    jeu.print();
-    return 0;
+   Game jeu;
+   jeu.initGame();
+   jeu.print();
+   return 0;
  }
