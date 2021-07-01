@@ -19,6 +19,7 @@ void Game::initGame(){
     strValue >> y;
 
     player1 = new Player(50, x, y,0);
+    entity[0] = player1;
 
     posi = map->get_spawn_person();
     strValue << posi[0];
@@ -29,6 +30,7 @@ void Game::initGame(){
 
     strValue >> y;
     ghost1 = new Ghost(50,x,y,1);
+    entity[1]= ghost1;
     mainBoucle();
     delete player1;
     delete ghost1;

@@ -1,6 +1,7 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
 #include "Position.hpp"
+#include <iostream>
 
 #define UP 1
 #define DOWN 2
@@ -16,7 +17,7 @@ protected:
     double _speed;
     //Display
     int _sprite;
-    std::string _sprite_terminal = "K";
+    std::string _sprite_terminal = "0";
 public:
     // Constructeur
     Entity(double speed, int x, int y ,int sprite): _speed(speed), _sprite(sprite) {_pos = new Position(x,y);}

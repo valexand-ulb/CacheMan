@@ -10,6 +10,7 @@ void Entity::set_sprite(int new_sprite) {_sprite = new_sprite;}
 
 
 bool Entity::isCoord(int x, int y){
+    std::cout << get_X() << " et " << get_Y() << std::endl;
     if (get_X() == x and get_Y() == y){
         return true;
     }

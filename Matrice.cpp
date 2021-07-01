@@ -35,6 +35,7 @@ void Matrice::display(Entity* enti[]){
             if (_map[i][j] == 1){std::cout << "X";}
             else{
                 for (int k = 0 ; k < 11; k++){
+                    //std::cout << enti[k]->isCoord(i,j)<< std::endl;
                     if (enti[k] != nullptr && enti[k]->isCoord(i,j)){
                         std::cout << enti[k]->get_sprite_terminal();
                         break;
