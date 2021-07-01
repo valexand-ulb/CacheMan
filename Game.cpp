@@ -37,6 +37,6 @@ void Game::initGame(){
 
 
 void Game::mainBoucle(){
-
+    map->display();
 
 }

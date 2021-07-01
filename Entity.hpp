@@ -16,6 +16,7 @@ protected:
     double _speed;
     //Display
     int _sprite;
+    std::string _sprite_terminal = "K";
 public:
     // Constructeur
     Entity(double speed, int x, int y ,int sprite): _speed(speed), _sprite(sprite) {_pos = new Position(x,y);}
@@ -25,6 +26,9 @@ public:
     double get_speed() const;
     int get_sprite() const;
     int get_direction() const;
+    int get_X() const {return _pos->getX();}
+    int get_Y() const {return _pos->getY();}
+    bool isCoord(int x, int y);
     // Setter
     void set_speed(double new_speed);
     void set_sprite(int new_sprite);
