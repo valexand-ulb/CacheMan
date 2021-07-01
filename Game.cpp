@@ -2,7 +2,7 @@
 #include <sstream>
 
 void Game::initGame(){
-
+    for (int i = 0; i < 10; i++)entity[i]=nullptr;
     
     map = new Matrice("Map/level1.txt");
     std::string posi = map->get_spawn_person();
@@ -37,6 +37,6 @@ void Game::initGame(){
 
 
 void Game::mainBoucle(){
-    map->display();
+    map->display(entity);
 
 }

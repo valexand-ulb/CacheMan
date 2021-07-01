@@ -8,13 +8,16 @@
 
 class Position {
 private:
-    int x,y;
-    const std::tuple[4] <signed int,signed int> deplacement = {std::make_tuple(0,1),std::make_tuple(0,-1),
+    int _x,_y;
+    const std::tuple<signed int,signed int> deplacement[4] = {std::make_tuple(0,1),std::make_tuple(0,-1),
                                                                std::make_tuple(1,0),std::make_tuple(-1,0)};
 public:
     Position(int x, int y);
     int getX() const, getY() const;
     int distFromPos(Position pos) const;
+    void setX(int); 
+    void setY(int);
+    void setPosition(int , int );
 };
 
 

@@ -28,6 +28,7 @@ public:
     int get_direction() const;
     int get_X() const {return _pos->getX();}
     int get_Y() const {return _pos->getY();}
+    std::string get_sprite_terminal()const {return _sprite_terminal;}
     bool isCoord(int x, int y);
     // Setter
     void set_speed(double new_speed);

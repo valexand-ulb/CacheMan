@@ -29,12 +29,21 @@ void Matrice::openingMap()
 }
 
 
-void Matrice::display(){
+void Matrice::display(Entity* enti[]){
     for (int i = 0; i < _size ; i++){
         for (int j = 0 ; j < _size ;j++){
             if (_map[i][j] == 1){std::cout << "X";}
+            else{
+                for (int k = 0 ; k < 11; k++){
+                    if (enti[k] != nullptr && enti[k]->isCoord(i,j)){
+                        std::cout << enti[k]->get_sprite_terminal();
+                        break;
+                    }
+                    else if (k == 10){std::cout << ".";}
+                }
+            }
             //else if ()
-            else if (_map[i][j] == 0){std::cout << ".";}
+            //else if (_map[i][j] == 0){std::cout << ".";}
         }
         std::cout << std::endl;
     }

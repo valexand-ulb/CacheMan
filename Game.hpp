@@ -11,7 +11,7 @@ class Game{
 */
     static const int sizeMax = 10;//taille du vecteur
     int size=0;
-    Entity(* entity)[sizeMax]; 
+    Entity* entity[sizeMax]; 
 
     //entity
     Entity* player1;
@@ -24,7 +24,7 @@ public:
 
     //fonction
     void print(){
-        map->display();
+        map->display(entity);
     }
     void initGame(); //creation des entites de bases
     void mainBoucle();

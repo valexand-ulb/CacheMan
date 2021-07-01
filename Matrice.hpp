@@ -23,7 +23,7 @@ public:
     Matrice() noexcept = default;
     Matrice(std::string way_map): _file_map(way_map) {openingMap();}
     void openingMap();
-    void display();
+    void display(Entity* enti[]);
     void spliter(std::vector<std::string>& vect, std::string str);
     std::string get_spawn_person();
 
