@@ -7,8 +7,12 @@ output: Bonus.o DisplayMenu.o Entity.o Game.o Ghost.o Matrice.o Person.o Player.
 *.o: *.cpp *.hpp
 	g++ *.cpp *.hpp -c
 
+
+re: clean2 output
+
 clean: 
 	rm *.o *.hpp.gch output
 
-re: 
-	clean make
+clean2: 
+	rm *.o output
+
