@@ -25,6 +25,8 @@ public:
     void openingMap();
     void display();
     void spliter(std::vector<std::string>& vect, std::string str);
+    void spawn_player(int x, int y);
+    void spawn_ghost(int x, int y);
     std::string get_spawn_person();
 
 

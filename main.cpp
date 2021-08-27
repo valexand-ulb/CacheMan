@@ -4,9 +4,9 @@
 
 #include "Game.hpp"
 
- int main(){
-   Game jeu;
-   jeu.initGame();
-   jeu.print();
-   return 0;
- }
+int main(){
+  Game jeu;
+  jeu.initGame();
+  jeu.print();
+  return 0;
+}

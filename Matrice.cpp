@@ -1,5 +1,9 @@
 #include "Matrice.hpp"
 
+#define EMPTY 0
+#define WALL 1
+#define PLAYER 2
+#define GHOST 3
 
 void Matrice::openingMap()
 {
@@ -32,8 +36,10 @@ void Matrice::openingMap()
 void Matrice::display(){
     for (int i = 0; i < _size ; i++){
         for (int j = 0 ; j < _size ;j++){
-            if (_map[i][j] == 1){std::cout << "X";}
-            else if (_map[i][j] == 0){std::cout << ".";}
+            if (_map[i][j] == WALL){std::cout << "X";}
+            else if (_map[i][j] == EMPTY){std::cout << ".";}
+            else if (_map[i][j] == PLAYER) {std::cout << "O";}
+            else if (_map[i][j] == GHOST) {std::cout << "&";}
         }
         std::cout << std::endl;
     }
@@ -55,9 +61,20 @@ void Matrice::spliter(std::vector<std::string>& vect, std::string str){
 	return;
 }
 
+void Matrice::spawn_player(int x, int y) {
+    _map[x][y] = PLAYER;
+}
+
+void Matrice::spawn_ghost(int x, int y) {
+    _map[x][y] = GHOST;
+}
+
 std::string Matrice::get_spawn_person(){
-    int indice = rand() % vect_spawn_person.size() - 2;
+    //std::cout << "vect_spawn_person.size() = " << vect_spawn_person.size() << std::endl;
+    int indice = rand() % vect_spawn_person.size();
+    //std::cout << "indice = " << indice << std::endl;
     vect_spawn_person.push_back(vect_spawn_person[indice]);
     vect_spawn_person.erase(vect_spawn_person.begin()+indice);
+    //std::cout << "vect_spawn_person.back() = " << vect_spawn_person.back() << std::endl;
     return vect_spawn_person.back();
 }
