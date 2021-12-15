@@ -111,8 +111,8 @@ void Game::move(){
 void Game::mainBoucle(){
     bool playing_game = true;
     while (playing_game){
-        key_input();
-        move();
+        Game::key_input();
+        Game::move();
         map->display(entity);
     }
 }
