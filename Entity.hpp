@@ -1,12 +1,9 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
+#include "Variable.hpp"
 #include "Position.hpp"
 #include <iostream>
 
-#define UP 1
-#define DOWN 2
-#define RIGHT 3
-#define LEFT 4
 
 class Entity
 {
@@ -36,6 +33,6 @@ public:
     void set_sprite(int new_sprite);
     void set_direction(int new_direction);
     //move. A redefinir en dessous!
-    virtual void move(int direction) {return;}
+    virtual void move(int direction){return;}
 };
 #endif

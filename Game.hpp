@@ -28,7 +28,8 @@ public:
     }
     void initGame(); //creation des entites de bases
     void mainBoucle();
-
+    void key_input();
+    void move();
 
 
 

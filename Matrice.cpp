@@ -34,6 +34,7 @@ void Matrice::openingMap()
 
 
 void Matrice::display(Entity* enti[]){
+    std::system("clear");
     for (int i = 0; i < _size ; i++){
         for (int j = 0 ; j < _size ;j++){
             if (_map[i][j] == WALL){std::cout << "X";}

@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include <SFML/Window/Keyboard.hpp>
 
 void Game::initGame(){
     for (int i = 0; i < 10; i++)entity[i]=nullptr;
@@ -79,7 +80,39 @@ void Game::initGame(){
 }
 
 
-void Game::mainBoucle(){
-    //map->display(entity);
+void Game::key_input(){
 
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+{
+    player1->set_direction(UP);
+}
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+{
+    player1->set_direction(DOWN);
+}
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+{
+    player1->set_direction(LEFT);
+}
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+{
+    player1->set_direction(RIGHT);
+}
+    
+
+}
+
+void Game::move(){
+    player1->move(player1->get_direction());
+    std::cout << player1->get_direction() << std::endl;
+}
+
+
+void Game::mainBoucle(){
+    bool playing_game = true;
+    while (playing_game){
+        key_input();
+        move();
+        map->display(entity);
+    }
 }
