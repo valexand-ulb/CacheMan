@@ -168,7 +168,7 @@ void Game::mainBoucle(){
         tableau[1][1] = ghost1->get_X();
         tableau[1][2] = ghost1->get_Y();
 
-        map->display_terminal(player1, ghost1);
+        map->collision(player1, ghost1);
         sleep(1);
     }
 }
