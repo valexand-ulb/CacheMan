@@ -80,6 +80,10 @@ void Game::initGame(){
     ghost1 = new Ghost(1, x2, y2,1);
     //map->spawn_ghost(x2, y2);
 
+    //put entities in the arrow
+    entity[0] = player1;
+    entity[1] = ghost1;
+
     mainBoucle();
     delete player1;
     delete ghost1;
@@ -109,8 +113,32 @@ void Game::key_input(){
 
 }
 
+
+void Game::key_input_ghost(){ // temporaire, pour le reseau
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+{
+    ghost1->set_direction(UP);
+}
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+{
+    ghost1->set_direction(DOWN);
+}
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+{
+    ghost1->set_direction(LEFT);
+}
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+{
+    ghost1->set_direction(RIGHT);
+}
+    
+
+}
+
 void Game::move(){
     player1->move(player1->get_direction());
+    ghost1->move(ghost1->get_direction());
     std::cout << player1->get_direction() << std::endl;
 }
 
@@ -130,6 +158,7 @@ void Game::mainBoucle(){
     bool playing_game = true;
     while (playing_game){
         Game::key_input();
+        Game::key_input_ghost();
         Game::move();
         int tableau[3][3];
         tableau[0][0] = PLAYER;
@@ -139,7 +168,7 @@ void Game::mainBoucle(){
         tableau[1][1] = ghost1->get_X();
         tableau[1][2] = ghost1->get_Y();
 
-        map->display(player1, ghost1);
+        map->display_terminal(player1, ghost1);
         sleep(1);
     }
 }

@@ -33,7 +33,7 @@ void Matrice::openingMap()
 }
 
 
-void Matrice::display(Entity* player1, Entity* ghost1){
+void Matrice::display_terminal(Entity* player1, Entity* ghost1){
     //std::system("clear");
     for (int i = 0; i < _size ; i++){
         for (int j = 0 ; j < _size ;j++){
@@ -48,8 +48,10 @@ void Matrice::display(Entity* player1, Entity* ghost1){
     }
 }
 
-void Matrice::move(Entity player1, Entity ghost1){
-    
+void Matrice::display_window(Entity* entities[]){
+    /***
+     * Voir ce qu'on va utiliser mais je pense SFML
+     * ***/
 }
 
 void Matrice::spliter(std::vector<std::string>& vect, std::string str){

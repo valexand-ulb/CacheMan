@@ -29,6 +29,7 @@ public:
     void initGame(); //creation des entites de bases
     void mainBoucle();
     void key_input();
+    void key_input_ghost();
     void move();
     int getcoord();
 
