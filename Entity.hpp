@@ -33,6 +33,6 @@ public:
     void set_sprite(int new_sprite);
     void set_direction(int new_direction);
     //move. A redefinir en dessous!
-    virtual void move(int direction){return;}
+    virtual void move(int direction){std::cout << "le mauvais mauvement se fait" << std::endl;return;}
 };
 #endif

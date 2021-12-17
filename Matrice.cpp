@@ -33,17 +33,23 @@ void Matrice::openingMap()
 }
 
 
-void Matrice::display(Entity* enti[]){
-    std::system("clear");
+void Matrice::display(Entity* player1, Entity* ghost1){
+    //std::system("clear");
     for (int i = 0; i < _size ; i++){
         for (int j = 0 ; j < _size ;j++){
-            if (_map[i][j] == WALL){std::cout << "X";}
+            if (_map[i][j] == WALL){std::cout << "X";} 
+            else if (player1->get_X() == i and player1->get_Y() == j) 
+            {std::cout << "O";}
+            else if (ghost1->get_X() == i and ghost1->get_Y() == j) 
+            {std::cout << "&";}
             else if (_map[i][j] == EMPTY){std::cout << ".";}
-            else if (_map[i][j] == PLAYER) {std::cout << "O";}
-            else if (_map[i][j] == GHOST) {std::cout << "&";}
         }
         std::cout << std::endl;
     }
+}
+
+void Matrice::move(Entity player1, Entity ghost1){
+    
 }
 
 void Matrice::spliter(std::vector<std::string>& vect, std::string str){

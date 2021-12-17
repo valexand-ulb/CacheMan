@@ -1,10 +1,17 @@
 #include "Game.hpp"
 #include <SFML/Window/Keyboard.hpp>
+#include <unistd.h>
+
+
+#define EMPTY 0
+#define WALL 1
+#define PLAYER 2
+#define GHOST 3
 
 void Game::initGame(){
     for (int i = 0; i < 10; i++)entity[i]=nullptr;
     
-    map = new Matrice("Map/level1.txt");
+    map = new Matrice("Map/level2.txt");
 
     std::string posi = map->get_spawn_person();
     //std::cout << "posi = " << posi << std::endl;
@@ -40,9 +47,9 @@ void Game::initGame(){
     unsigned int y1 = stoi(number);
     //std::cout << "new y1 = " << y1 << std::endl;
 
-    player1 = new Player(50, x1, y1,0);
+    player1 = new Player(1, x1, y1,0);
     //std::cout << "x1 = " << x1 << " et y1 = " << y1 << std::endl;
-    map->spawn_player(x1, y1);
+    //map->spawn_player(x1, y1);
     number = "";
     posi = map->get_spawn_person();
     int k = 0;
@@ -70,8 +77,8 @@ void Game::initGame(){
     }
     //std::cout << "number2 = " << number << std::endl;
     unsigned int y2 = stoi(number);
-    ghost1 = new Ghost(50, x2, y2,1);
-    map->spawn_ghost(x2, y2);
+    ghost1 = new Ghost(1, x2, y2,1);
+    //map->spawn_ghost(x2, y2);
 
     mainBoucle();
     delete player1;
@@ -107,12 +114,32 @@ void Game::move(){
     std::cout << player1->get_direction() << std::endl;
 }
 
+int Game::getcoord(){
+    int tableau[3][3];
+    tableau[0][0] = PLAYER;
+    tableau[0][1] = player1->get_X();
+    tableau[0][2] = player1->get_Y();
+    tableau[1][0] = GHOST;
+    tableau[1][1] = ghost1->get_X();
+    tableau[1][2] = ghost1->get_Y();
+}
+
+
 
 void Game::mainBoucle(){
     bool playing_game = true;
     while (playing_game){
         Game::key_input();
         Game::move();
-        map->display(entity);
+        int tableau[3][3];
+        tableau[0][0] = PLAYER;
+        tableau[0][1] = player1->get_X();
+        tableau[0][2] = player1->get_Y();
+        tableau[1][0] = GHOST;
+        tableau[1][1] = ghost1->get_X();
+        tableau[1][2] = ghost1->get_Y();
+
+        map->display(player1, ghost1);
+        sleep(1);
     }
 }
