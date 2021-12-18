@@ -24,7 +24,22 @@ void Display::display_terminal(int size,int** map, Entity* player1, Entity* ghos
 }
 
 
-void Display::display_window(Entity* entities[]){
+//methode window
+
+void Display::init_window(){
+    _window = new sf::RenderWindow(sf::VideoMode(640,720), "L-Type", sf::Style::Close);
+}
+
+
+void Display::display_window(){//Entity* entities[]){
+
+    sf::Event event;
+    while (this->_window->pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed) this->_window->close();
+            //if (event.type == sf::Event::GainedFocus) this->_focused = true;
+            //if (event.type == sf::Event::LostFocus) this->_focused = false;
+        }
     /***
      * Voir ce qu'on va utiliser mais je pense SFML
      * ***/

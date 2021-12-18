@@ -29,12 +29,16 @@ void Matrice::openingMap()
             else _map[i][j] = 0;
         }
     }
+    if (true) _window = new Display();_window->init_window();
+
     return;
 }
 
 
 void Matrice::collision(Entity* player1,Entity* ghost1){
-    Display::display_terminal(_size, _map, player1, ghost1);
+    //peux choisir l'affichage
+    //Display::display_terminal(_size, _map, player1, ghost1);
+    _window->display_window();
 }
 
 

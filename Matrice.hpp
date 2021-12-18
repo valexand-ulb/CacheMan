@@ -16,12 +16,14 @@ class Matrice{
 
 int _size;
 int** _map;
+Display* _window = nullptr;
 std::string _file_map;
 std::vector<std::string> vect_spawn_person;
 
 public:
     Matrice() noexcept = default;
     Matrice(std::string way_map): _file_map(way_map) {openingMap();}
+    ~Matrice(){if (_window != nullptr) delete _window;}
     void openingMap();
     void spliter(std::vector<std::string>& vect, std::string str);
     void spawn_player(int x, int y);
