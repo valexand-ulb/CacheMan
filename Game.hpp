@@ -31,7 +31,7 @@ public:
     void key_input();
     void key_input_ghost();
     void move();
-    int getcoord();
+    void getcoord();
 
 
 

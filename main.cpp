@@ -7,6 +7,6 @@
 int main(){
   Game jeu;
   jeu.initGame();
-  jeu.print();
+  //jeu.print();
   return 0;
 }

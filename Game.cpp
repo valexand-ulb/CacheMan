@@ -142,7 +142,7 @@ void Game::move(){
     std::cout << player1->get_direction() << std::endl;
 }
 
-int Game::getcoord(){
+void Game::getcoord(){
     int tableau[3][3];
     tableau[0][0] = PLAYER;
     tableau[0][1] = player1->get_X();
@@ -169,6 +169,6 @@ void Game::mainBoucle(){
         tableau[1][2] = ghost1->get_Y();
 
         map->collision(player1, ghost1);
-        sleep(1);
+        usleep(500000); //1 000 000 = 1 seconde
     }
 }

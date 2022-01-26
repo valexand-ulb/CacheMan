@@ -27,7 +27,7 @@ void Display::display_terminal(int size,int** map, Entity* player1, Entity* ghos
 //methode window
 
 void Display::init_window(){
-    _window = new sf::RenderWindow(sf::VideoMode(640,720), "L-Type", sf::Style::Close);
+    _window = new sf::RenderWindow(sf::VideoMode(640,720), "Cache man", sf::Style::Close);
 }
 
 
