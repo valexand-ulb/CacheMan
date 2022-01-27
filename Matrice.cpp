@@ -34,14 +34,6 @@ void Matrice::openingMap()
     return;
 }
 
-
-void Matrice::collision(Entity* player1,Entity* ghost1){
-    //peux choisir l'affichage
-    //Display::display_terminal(_size, _map, player1, ghost1);
-    _window->display_window();
-}
-
-
 void Matrice::spliter(std::vector<std::string>& vect, std::string str){
 
 	std::string::size_type stTemp = str.find(",");
@@ -66,7 +58,7 @@ void Matrice::spawn_ghost(int x, int y) {
     _map[x][y] = GHOST;
 }
 
-std::string Matrice::get_spawn_person(){
+std::string Matrice::get_spawn_person(){//permet de choisir un endroit de spawn dans un liste definis
     //std::cout << "vect_spawn_person.size() = " << vect_spawn_person.size() << std::endl;
     int indice = rand() % vect_spawn_person.size();
     //std::cout << "indice = " << indice << std::endl;
@@ -75,3 +67,19 @@ std::string Matrice::get_spawn_person(){
     //std::cout << "vect_spawn_person.back() = " << vect_spawn_person.back() << std::endl;
     return vect_spawn_person.back();
 }
+
+//##########################main boucle########################
+
+void Matrice::main(){
+    //collision();
+}
+
+
+void Matrice::collision(Entity* player1,Entity* ghost1){
+    //peux choisir l'affichage
+    //Display::display_terminal(_size, _map, player1, ghost1);
+    Entity* list[] = {player1, ghost1};
+    _window->display_window(list, _map, _size);
+}
+
+

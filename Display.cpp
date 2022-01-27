@@ -27,11 +27,26 @@ void Display::display_terminal(int size,int** map, Entity* player1, Entity* ghos
 //methode window
 
 void Display::init_window(){
-    _window = new sf::RenderWindow(sf::VideoMode(640,720), "Cache man", sf::Style::Close);
+    _window = new sf::RenderWindow(sf::VideoMode(_largeur,_longueur), "Cache man", sf::Style::Close);
+
+    loadtexture();
+    sf::Sprite background;
+    background.setTexture(_background);
+    background.setScale(1.2,2);
+    _window->draw(background);
+    _window->display();
 }
 
 
-void Display::display_window(){//Entity* entities[]){
+void Display::loadtexture(){
+    _background.loadFromFile("Texture/background.jpg");
+    _blockwall.loadFromFile("Texture/blockwall.jpg");
+    _player1.loadFromFile("Texture/pacman.jpg");
+    _player2.loadFromFile("Texture/redghost.jpg");
+    _player3.loadFromFile("Texture/yellowghost.jpg");
+}
+
+void Display::display_window(Entity* entities[], int** map,int size){
 
     sf::Event event;
     while (this->_window->pollEvent(event))
@@ -40,7 +55,44 @@ void Display::display_window(){//Entity* entities[]){
             //if (event.type == sf::Event::GainedFocus) this->_focused = true;
             //if (event.type == sf::Event::LostFocus) this->_focused = false;
         }
+    display_background();
+    for (int i = 0; i <size; i++){
+        for (int j = 0; j <size; j++){
+            if (map[i][j] == 1){
+                display_block(i,j);
+            }
+        }
+    }
+    for (int i = 0; i<2; i++){//a changer car ca pue ses morts
+        display_entities(entities[i]);
+    }
+    _window->display();
     /***
      * Voir ce qu'on va utiliser mais je pense SFML
      * ***/
+}
+
+void Display::display_background(){
+    sf::Sprite background;
+    background.setTexture(_background);
+    background.setScale(1.2,2);
+    _window->draw(background);
+}
+
+void Display::display_entities(Entity* entity){
+    sf::Sprite sprite;
+    sprite.setTexture(_player1);
+    sprite.setScale(0.1,0.1);
+    sprite.setPosition(entity->get_X()*50, entity->get_Y()*50);
+    _window->draw(sprite);
+
+}
+
+
+void Display::display_block(int x, int y){
+    sf::Sprite sprite;
+    sprite.setTexture(_blockwall);
+    sprite.setScale(0.1,0.1);
+    sprite.setPosition(x*40,y*40);
+    _window->draw(sprite);
 }

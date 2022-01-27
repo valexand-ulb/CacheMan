@@ -167,7 +167,7 @@ void Game::mainBoucle(){
         tableau[1][0] = GHOST;
         tableau[1][1] = ghost1->get_X();
         tableau[1][2] = ghost1->get_Y();
-
+        std::cout << "ca display !" << std::endl;
         map->collision(player1, ghost1);
         usleep(500000); //1 000 000 = 1 seconde
     }

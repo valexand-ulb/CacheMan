@@ -24,10 +24,13 @@ public:
     Matrice() noexcept = default;
     Matrice(std::string way_map): _file_map(way_map) {openingMap();}
     ~Matrice(){if (_window != nullptr) delete _window;}
+    //sert a l'ouverture
     void openingMap();
     void spliter(std::vector<std::string>& vect, std::string str);
     void spawn_player(int x, int y);
     void spawn_ghost(int x, int y);
+    //main boucle
+    void main();
     void collision(Entity* player1,Entity* ghost1);
     std::string get_spawn_person();
 

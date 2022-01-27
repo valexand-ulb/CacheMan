@@ -8,11 +8,11 @@ output: Bonus.o DisplayMenu.o Entity.o Game.o Ghost.o Matrice.o Person.o Player.
 	g++ *.cpp *.hpp -c -lsfml-graphics -lsfml-window -lsfml-system
 
 
-re: clean2 output
-
 clean: 
 	rm *.o *.hpp.gch output
 
 clean2: 
 	rm *.o output
 
+
+re: clean2 output
