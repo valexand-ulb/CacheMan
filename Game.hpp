@@ -2,6 +2,7 @@
 #define GAME_HPP
 #include "Player.hpp"
 #include "Ghost.hpp"
+#include "Bonus.hpp"
 #include "Matrice.hpp"
 #include <string>
 

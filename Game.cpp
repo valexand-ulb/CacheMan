@@ -1,6 +1,7 @@
 #include "Game.hpp"
 #include <SFML/Window/Keyboard.hpp>
 #include <unistd.h>
+#include <vector>
 
 
 #define EMPTY 0
@@ -156,19 +157,27 @@ void Game::getcoord(){
 
 void Game::mainBoucle(){
     bool playing_game = true;
+    std::vector<Entity*> entitiesvector = {player1,ghost1};
     while (playing_game){
         Game::key_input();
         Game::key_input_ghost();
         Game::move();
-        int tableau[3][3];
-        tableau[0][0] = PLAYER;
-        tableau[0][1] = player1->get_X();
-        tableau[0][2] = player1->get_Y();
-        tableau[1][0] = GHOST;
-        tableau[1][1] = ghost1->get_X();
-        tableau[1][2] = ghost1->get_Y();
+        // int tableau[3][3];
+        // tableau[0][0] = PLAYER;
+        // tableau[0][1] = player1->get_X();
+        // tableau[0][2] = player1->get_Y();
+        // tableau[1][0] = GHOST;
+        // tableau[1][1] = ghost1->get_X();
+        // tableau[1][2] = ghost1->get_Y();
+
+        //###############SPAWN BONUS #######################
+        if (false){// A voir ce qu'on trouvera comme idee proba de spawn
+            int* tableau = map->get_spawn_bonus_coord();
+            //on devrait predefinir des bonus, a faire aussi
+            entitiesvector.push_back(new Bonus(0,1,0.2,false,false,1,false,false));
+        }
         std::cout << "ca display !" << std::endl;
-        map->collision(player1, ghost1);
+        map->collision(entitiesvector);
         usleep(500000); //1 000 000 = 1 seconde
     }
 }

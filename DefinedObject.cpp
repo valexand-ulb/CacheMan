@@ -1,0 +1,1 @@
+#include "DefinedObject.hpp"

@@ -46,7 +46,7 @@ void Display::loadtexture(){
     _player3.loadFromFile("Texture/yellowghost.jpg");
 }
 
-void Display::display_window(Entity* entities[], int** map,int size){
+void Display::display_window(std::vector<Entity*> entities, int** map,int size){
 
     sf::Event event;
     while (this->_window->pollEvent(event))
@@ -63,7 +63,7 @@ void Display::display_window(Entity* entities[], int** map,int size){
             }
         }
     }
-    for (int i = 0; i<2; i++){//a changer car ca pue ses morts
+    for (int i = 0; i < entities.size(); i++){
         display_entities(entities[i]);
     }
     _window->display();

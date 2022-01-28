@@ -31,8 +31,9 @@ public:
     void spawn_ghost(int x, int y);
     //main boucle
     void main();
-    void collision(Entity* player1,Entity* ghost1);
+    void collision(std::vector<Entity*>);
     std::string get_spawn_person();
+    int* get_spawn_bonus_coord();
 
 
     

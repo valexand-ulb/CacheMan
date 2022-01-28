@@ -24,10 +24,12 @@ void Matrice::openingMap()
     for (int i = 0; i < nb ; i++){
         std::getline(file, str);
         for (int j = 0 ; j < nb ;j++){
+            std::cout << str[j];
             if (str[j] == '1')_map[i][j] = 1;
             //else if (nombre == '\n')continue;
             else _map[i][j] = 0;
         }
+    std::cout << std::endl;
     }
     if (true) _window = new Display();_window->init_window();
 
@@ -75,11 +77,22 @@ void Matrice::main(){
 }
 
 
-void Matrice::collision(Entity* player1,Entity* ghost1){
+void Matrice::collision(std::vector<Entity*> entities){
     //peux choisir l'affichage
     //Display::display_terminal(_size, _map, player1, ghost1);
-    Entity* list[] = {player1, ghost1};
-    _window->display_window(list, _map, _size);
+    //Entity* list[] = {entities[0], entities[1]};
+    _window->display_window(entities, _map, _size);
 }
 
+int* Matrice::get_spawn_bonus_coord(){
+    int tableau[] = {(rand()%(_size-1))+1,(rand()%(_size-1))+1};
+    while(true){
+        if (_map[tableau[0]][tableau[1]])break;
+        else{
+            tableau[0]= (rand()%(_size-1))+1;
+            tableau[1]= (rand()%(_size-1))+1;
+        }
+    }
+    return tableau;
+}
 

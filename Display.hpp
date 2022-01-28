@@ -36,7 +36,7 @@ public:
     void loadtexture();
 
     //affichage
-    void display_window(Entity* entities[], int**, int);
+    void display_window(std::vector<Entity*>, int**, int);
     void display_entities(Entity*);
     void display_block(int,int);
     void display_background();
